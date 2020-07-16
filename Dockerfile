@@ -5,10 +5,21 @@ RUN apt update \
        curl \
        wget \
        net-tools \
+	   tcpdump \
+	   multitail \
+	   git \
+	   vim \
+	   htop \
+	   tmux \
+	   rsync \
+	   jq \
        telnet \
        make \
        python3 \
        python3-pip \
        unzip \
+	   build-essential \
+	   nmap \ 
+	   netcat \
     && apt autoremove
 
