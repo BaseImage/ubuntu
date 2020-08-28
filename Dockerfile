@@ -21,5 +21,6 @@ RUN apt update \
 	   build-essential \
 	   nmap \ 
 	   netcat \
+	   iputils-ping \
     && apt autoremove
 
