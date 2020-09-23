@@ -22,5 +22,6 @@ RUN apt update \
 	   nmap \ 
 	   netcat \
 	   iputils-ping \
+	   dnsutils 
     && apt autoremove
 
