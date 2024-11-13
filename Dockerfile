@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 RUN apt update \
-    && apt install -y \
+    && apt install --no-install-recommends -y \
         curl \
         wget \
         net-tools \
@@ -23,5 +23,12 @@ RUN apt update \
         netcat-traditional \
         iputils-ping \
         dnsutils \
-    && apt autoremove
+        mysql-client \
+        postgresql-client \
+        redis-tools \
+        iproute2 \
+        socat \
+    && apt autoremove \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 

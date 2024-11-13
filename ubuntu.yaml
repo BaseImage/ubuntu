@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ubuntu24
+    logging: ubuntu24
+  name: ubuntu24
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu24
+  template:
+    metadata:
+      labels:
+        app: ubuntu24
+        logging: ubuntu24
+    spec:
+      containers:
+      - command:
+        - /bin/sh
+        - -c
+        - while true; do date ;echo 'time sleep' ; sleep 3; done;
+        image: baseimg/ubuntu:2404
+        imagePullPolicy: Always
+        name: ubuntu24
