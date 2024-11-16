@@ -1,6 +1,6 @@
 # 定义变量
 IMAGE_NAME := baseimg/ubuntu
-TAG := 2404
+TAG := $(shell git rev-parse --short=8 HEAD)
 
 # 默认目标
 .PHONY: build

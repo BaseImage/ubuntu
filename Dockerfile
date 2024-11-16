@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
-RUN apt update \
-    && apt install --no-install-recommends -y \
+RUN apt update -qq \
+    && apt install -qq --no-install-recommends -y \
         curl \
         wget \
         net-tools \
@@ -28,6 +28,10 @@ RUN apt update \
         redis-tools \
         iproute2 \
         socat \
+        bash-completion \
+        make \
+        build-essential \
+        openssh-server \
     && apt autoremove \
     && apt clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
