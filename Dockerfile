@@ -1,5 +1,6 @@
 FROM ubuntu:24.04
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update -qq \
     && apt install -qq --no-install-recommends -y \
         curl \
@@ -34,5 +35,9 @@ RUN apt update -qq \
         openssh-server \
     && apt autoremove \
     && apt clean \
+    && mkdir -p /run/sshd \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd", "-D"]
