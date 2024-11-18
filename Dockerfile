@@ -36,6 +36,7 @@ RUN apt update -qq \
     && apt autoremove \
     && apt clean \
     && mkdir -p /run/sshd \
+    &&  curl -sS https://starship.rs/install.sh | sh -s -- -y -f \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 EXPOSE 22
