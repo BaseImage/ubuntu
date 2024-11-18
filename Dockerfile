@@ -33,6 +33,9 @@ RUN apt update -qq \
         make \
         build-essential \
         openssh-server \
+        iputils-tracepath \
+        traceroute \
+        mtr \
     && apt autoremove \
     && apt clean \
     && mkdir -p /run/sshd \
